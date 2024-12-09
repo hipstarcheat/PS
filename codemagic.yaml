@@ -7,6 +7,6 @@ workflows:
       - name: Resolve dependencies
         script: swift package resolve
       - name: Build the app
-        script: xcodebuild -scheme "MyApp" -sdk iphoneos -configuration Release
+        script: xcodebuild -scheme "My App" -sdk iphoneos -configuration Release
     artifacts:
       - build/ios/ipa/*.ipa
