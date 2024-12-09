@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "My App",  // Название вашего приложения
     platforms: [
-        .iOS(.v17)  // Минимальная версия iOS
+        .iOS(.v16)  // Минимальная версия iOS
     ],
     products: [
         .executable(  // Исправлено на .executable вместо .executableTarget
