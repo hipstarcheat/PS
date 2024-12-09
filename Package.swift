@@ -4,16 +4,12 @@ import PackageDescription
 let package = Package(
     name: "My App",  // Название вашего приложения
     platforms: [
-        .iOS(.v14)  // Минимальная версия iOS
+        .iOS(.v17.5)  // Минимальная версия iOS
     ],
     products: [
-        .executableTarget(
+        .executable(  // Исправлено на .executable вместо .executableTarget
             name: "My App",
-            dependencies: [],
-            path: "Sources", // Укажите папку, где находятся исходные файлы
-            resources: [
-                .process("../Resources/Assets.xcassets") // Укажите путь к ресурсам
-            ]
+            targets: ["MyAppTarget"]  // Используем Target для связывания
         ),
     ],
     dependencies: [
@@ -22,13 +18,16 @@ let package = Package(
         // .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.0.0")
     ],
     targets: [
-        .executableTarget(
-            name: "My App",
+        .target(
+            name: "MyAppTarget",  // Обновлено имя target'а
             dependencies: [
                 // Здесь укажите зависимости для вашего приложения, если есть
                 // Например: "Alamofire"
             ],
-            path: "./Sources"  // Укажите путь к исходным файлам вашего приложения
+            path: "Sources",  // Указываем путь к исходным файлам
+            resources: [
+                .process("Resources")  // Исправлено на правильный путь к ресурсам
+            ]
         ),
     ]
 )
