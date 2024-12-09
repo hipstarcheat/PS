@@ -2,6 +2,9 @@ workflows:
   ios-workflow:
     name: iOS SwiftPM Workflow
     environment:
+      vars:
+        APPLE_ID: "kiryushinrus@gmail.com"  # Ваш Apple ID
+        APPLE_PASSWORD: "tids-oakg-oryo-vkmt"  # App-specific password, который вы создали
       xcode: latest
     scripts:
       - name: Resolve dependencies
