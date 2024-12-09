@@ -1,0 +1,12 @@
+workflows:
+  ios-workflow:
+    name: iOS SwiftPM Workflow
+    environment:
+      xcode: latest
+    scripts:
+      - name: Resolve dependencies
+        script: swift package resolve
+      - name: Build the app
+        script: xcodebuild -scheme "YourAppName" -sdk iphoneos -configuration Release
+    artifacts:
+      - build/ios/ipa/*.ipa
